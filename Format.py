@@ -799,6 +799,9 @@ class YOLO:
             else:
                 manifest_abspath = manifest_path
 
+            os.makedirs(os.path.dirname(os.path.abspath(manifest_abspath)), exist_ok=True)
+            os.makedirs(save_path, exist_ok=True)
+
             with open(os.path.abspath(manifest_abspath), "w") as manifest_file:
 
                 for key in data:
